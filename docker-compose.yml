@@ -1,0 +1,33 @@
+services:
+  web:
+    build: .
+    container_name: codes-cite-web
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+    environment:
+      - DOCKER_ENV=true
+      - MYSQL_HOST=db
+      - MYSQL_DATABASE=gestion_reclamations
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+    volumes:
+      - ./uploads:/var/www/html/uploads
+
+  db:
+    image: mysql:8.0
+    container_name: codes-cite-db
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+      - MYSQL_DATABASE=gestion_reclamations
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./database.sql:/docker-entrypoint-initdb.d/database.sql
+
+volumes:
+  db_data:

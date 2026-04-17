@@ -1,0 +1,5 @@
+.env
+*.log
+.idea/
+docker-compose.override.yml
+db_data/

@@ -226,3 +226,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // Test hook local
 // Test hook final
 // Test final 2
+// Test avec token

@@ -1,0 +1,12 @@
+{
+    "name": "m3hdi/codes_cite",
+    "authors": [
+        {
+            "name": "m3hdi",
+            "email": "m3hdi@example.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^10.0"
+    }
+}

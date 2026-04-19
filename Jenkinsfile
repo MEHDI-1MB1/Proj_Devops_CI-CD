@@ -18,7 +18,7 @@ pipeline {
         
         stage('PHP Lint') {
             steps {
-                sh 'find . -name "*.php" -not -path "./vendor/*" -exec php -l {} \; | grep -v "No syntax errors" || true'
+                sh 'find . -name "*.php" -not -path "./vendor/*" -exec php -l {} \\; 2>&1 | grep -v "No syntax errors" || true'
             }
         }
         
@@ -47,7 +47,7 @@ pipeline {
     
     post {
         failure {
-            echo '❌ Pipeline échoué !'
+            echo '❌ Pipeline échoué ! Vérifie les logs.'
         }
         success {
             echo '✅ Pipeline réussi ! Site: http://192.168.40.134'

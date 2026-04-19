@@ -228,3 +228,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // Test final 2
 // Test avec token
 // Test avec token222
+nouvelle fonction

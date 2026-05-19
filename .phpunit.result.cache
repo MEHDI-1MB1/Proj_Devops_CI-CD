@@ -1,0 +1,1 @@
+{"version":2,"defects":[],"times":{"ConfigTest::testDbConfigFileExists":0.001,"ConfigTest::testIndexFileExists":0,"ConfigTest::testDatabaseSqlExists":0,"ConfigTest::testDockerfileExists":0,"ConfigTest::testDockerComposeExists":0}}

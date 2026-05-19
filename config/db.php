@@ -1,16 +1,23 @@
 <?php
 
-// Détection automatique de l'environnement
-$is_docker = (getenv('DOCKER_ENV') === 'true') || file_exists('/.dockerenv');
+// Détection de l'environnement
+$is_k8s = getenv('KUBERNETES_SERVICE_HOST') !== false;
+$is_docker = getenv('DOCKER_ENV') === 'true' || file_exists('/.dockerenv');
 
-if ($is_docker) {
-    // Configuration pour Docker
+if ($is_k8s) {
+    // Configuration pour Kubernetes
+    $host = getenv('DB_HOST') ?: 'mysql-service';
+    $dbname = getenv('DB_NAME') ?: 'gestion_reclamations';
+    $username = getenv('DB_USER') ?: 'user';
+    $password = getenv('DB_PASSWORD') ?: 'password';
+} elseif ($is_docker) {
+    // Configuration pour Docker Compose
     $host = 'db';
     $dbname = 'gestion_reclamations';
     $username = 'user';
     $password = 'password';
 } else {
-    // Configuration pour développement local (sans Docker)
+    // Configuration pour développement local
     $host = 'localhost';
     $dbname = 'gestion_reclamations';
     $username = 'root';

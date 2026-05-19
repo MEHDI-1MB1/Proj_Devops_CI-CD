@@ -233,3 +233,4 @@ nouvelle fonction
 // Test webhook GitHub via ngrok
 // Test final CI/CD
 // Test webhook réel
+<- role: VIDEO DEMO - Mon May 18 08:32:18 PM EDT 2026 -->

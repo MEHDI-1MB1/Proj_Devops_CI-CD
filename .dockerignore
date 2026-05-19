@@ -5,3 +5,9 @@
 .env
 .gitignore
 .DS_Store
+
+# Optimisation Docker
+.git/
+vendor/
+k8s/
+terraform/
